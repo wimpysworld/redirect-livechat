@@ -1,7 +1,7 @@
-# Redirect YouTube Live Chat [![Support Server](https://img.shields.io/discord/712850672223125565.svg?label=WimpysWorld%20Discord&logo=Discord&colorB=0C306A&style=flat-square)](https://discord.gg/KcEGTDEhZK)
+# Redirect YouTube Live Chat [![Discord](https://img.shields.io/discord/712850672223125565?color=0C306A&label=WimpysWorld%20Discord&logo=Discord&logoColor=ffffff&style=flat-square)](https://discord.gg/KcEGTDEhZK)
 
 A simple Python 🐍 server that redirects to a YouTube 📺 channel's most recent
-live chat 💬
+live chat 💬 URL.
 
 This script is primarily intended to run as a local server that can be embedded
 as multiple browser sources or Browser Docks in [OBS Studio](https://obsproject.com/).
@@ -24,7 +24,7 @@ wasn't a live stream. This is by design to keep things simple.
 
   * Clone this git repository
   * Run `redirect-livechat.py` with a YouTube channel ID.
-  * Update your OBS browser source and Browser Docks to reference `http://localhost:8008`
+  * Update your OBS browser source(s) and Browser Dock(s) to reference `http://localhost:8008`
 
 ```
 usage: redirect-livechat.py [-h] [--addr ADDR] [--port PORT] channel_id
