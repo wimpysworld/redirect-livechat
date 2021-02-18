@@ -56,4 +56,4 @@ Directing to https://www.youtube.com/live_chat?dark_theme=1&is_popout=1&v=D87-Xm
 # TODO
 
   - [ ] Make a Snap
-  - [ ] Make a Docker
+  - [x] Make a Docker
