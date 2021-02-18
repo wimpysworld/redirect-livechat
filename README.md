@@ -1,24 +1,24 @@
-# Redirect YouTube Live Chat
+# Redirect YouTube Live Chat [![Support Server](https://img.shields.io/discord/712850672223125565.svg?label=WimpysWorld%20Discord&logo=Discord&colorB=0C306A&style=flat-square)](https://discord.gg/KcEGTDEhZK)
 
-A simple Python server that redirects to a YouTube channel's most recent live
-chat.
+A simple Python 🐍 server that redirects to a YouTube 📺 channel's most recent
+live chat 💬
 
 This script is primarily intended to run as a local server that can be embedded
-as multiple browser sources or Browser Docks in OBS Studio. The server will
-redirect to the most recent live chat URL for the given YouTube channel ID.
+as multiple browser sources or Browser Docks in [OBS Studio](https://obsproject.com/).
+The server will redirect 👉 to the most recent live chat URL for the given
+YouTube channel ID.
 
 ## Rationale
 
-I reference YouTube live chat URLs in 3 places in my OBS setup, it was tedious
-updating them all prior to going live. Now I reference `http://localhost:8008`
+My OBS setup references YouTube live chat URLs in three different places; it was
+tedious updating them all prior to going live 📡 Now I reference `http://localhost:8008`
 instead and the server takes care of the rest.
 
 ## Caveats
 
-The script doesn't use the YouTube APIs, it will blindly derive a live chat URL
-from the most recent videoId found in the given channel Id; even if that videoId
-wasn't a live stream. The is by design to keep things simple.
-
+The script does not use YouTube APIs, it will blindly 🙈 derive a live chat URL
+from the most recent `videoId` found for the given channel; even if that `videoId`
+wasn't a live stream. This is by design to keep things simple.
 
 # Usage
 
