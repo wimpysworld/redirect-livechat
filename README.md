@@ -51,9 +51,9 @@ Directing to https://www.youtube.com/live_chat?dark_theme=1&is_popout=1&v=D87-Xm
 127.0.0.1 - - [18/Feb/2021 13:30:15] "GET / HTTP/1.1" 302 -
 ```
 
-<kbd>Ctrl<kbd> + <kbd>C</kbd> exits.
+<kbd>Ctrl</kbd> + <kbd>C</kbd> exits.
 
 # TODO
 
-  [ ] Make a Snap
-  [ ] Make a Docker
+  - [ ] Make a Snap
+  - [ ] Make a Docker
