@@ -22,10 +22,6 @@ wasn't a live stream. This is by design to keep things simple.
 
 # Usage
 
-  * Clone this git repository
-  * Run `redirect-livechat.py` with a YouTube channel ID.
-  * Update your OBS browser source(s) and Browser Dock(s) to reference `http://localhost:8008`
-
 ```
 usage: redirect-livechat.py [-h] [--addr ADDR] [--port PORT] channel_id
 
@@ -52,6 +48,21 @@ Directing to https://www.youtube.com/live_chat?dark_theme=1&is_popout=1&v=D87-Xm
 ```
 
 <kbd>Ctrl</kbd> + <kbd>C</kbd> exits.
+
+## From Docker
+
+Run the following commands to build and run the Docker container:
+
+```console
+$ docker build -t redirect-livechat .
+$ docker run -p 8008:8008 -it redirect-livechat -a 0.0.0.0 UCQvWX73GQygcwXOTSf_VDVg
+```
+
+## From Source
+
+  * Clone this git repository
+  * Run `redirect-livechat.py` with a YouTube channel ID.
+  * Update your OBS browser source(s) and Browser Dock(s) to reference `http://localhost:8008`
 
 # TODO
 
