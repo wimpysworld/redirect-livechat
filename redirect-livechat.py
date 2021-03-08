@@ -42,7 +42,7 @@ def main():
     parser.add_argument('channel_id', action="store", help='youtube channel ID', type=str)
     args = parser.parse_args()
 
-    channel_url = "https://www.youtube.com/channel/%s" % args.channel_id
+    channel_url = f"https://www.youtube.com/channel/{args.channel_id}"
     keyword = '"videoId":'
 
     # Try get the channel data
@@ -50,10 +50,10 @@ def main():
         with urllib.request.urlopen(channel_url) as response:
             data = str(response.read())
     except urllib.error.HTTPError as e:
-        print("Error %s, %s: %s" % (e.code, e.reason, channel_url))
+        print(f"Error {e.code}, {e.reason}: {channel_url}")
         sys.exit(1)
     except urllib.error.URLError as e:
-        print("Error, %s: %s" % (e.reason, channel_url))
+        print(f"Error, {e.reason}: {channel_url}")
         sys.exit(1)
     else:
         # Find the character offset to the latest videoId
@@ -61,18 +61,18 @@ def main():
 
         # If the offset is the same as keyword length, the keyword was not found.
         if keyword_offset == len(keyword):
-            print("Error, the keyword %s was not found in %s" % (keyword, channel_url))
+            print(f"Error, the keyword {keyword} was not found in {channel_url}")
             sys.exit(1)
 
         # Derive the live chat URL
-        chat_url = "https://www.youtube.com/live_chat?dark_theme=1&is_popout=1&v=%s" % data[keyword_offset:keyword_offset+11]
+        chat_url = f"https://www.youtube.com/live_chat?dark_theme=1&is_popout=1&v={data[keyword_offset:keyword_offset+11]}"
 
         # Initialise the signal handler to catch Ctrl+C
         signal.signal(signal.SIGINT, signal_handler)
 
         # Initialise the redirect handler
         handler = socketserver.TCPServer((args.addr, args.port), redirect_handler_factory(chat_url))
-        print("Directing to %s via %s:%s" % (chat_url, args.addr, args.port))
+        print(f"Directing to {chat_url} via {args.addr}:{args.port}")
         handler.serve_forever()
 
 
